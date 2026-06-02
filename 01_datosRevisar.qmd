@@ -172,3 +172,12 @@ Para controlar la credibilidad o reproducibilidad de los resultados tenemos los 
 
 Por lo demás no separaría los resultados en sets (o igual sí, no lo tengo claro).
 
+# Exportar datos
+
+```{r}
+germination <- d0
+save(germination, file = "data/germination.Rdata")
+```
+
+
+
