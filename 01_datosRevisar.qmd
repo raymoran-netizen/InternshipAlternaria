@@ -1,0 +1,174 @@
+---
+# author:
+# - affiliation: Instituto Agroforestal Mediterráneo. Departamento de Ecosistemas Agroforestales.
+#   email: algarsal@upv.es
+#   name: Alfonso Garmendia
+title: Germination of *Alternaria* under different substances
+subtitle: Raymundo Internship. Data review. 
+title-block-banner: true
+date: last-modified
+date-format: iso
+lang: es-ES
+language:
+  title-block-published: "Última modificación"
+code-fold: true
+toc: true
+toc-location: right-body
+toc-depth: 6
+toc-title: Índice
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+---
+
+```{r include=FALSE}
+library(knitr)
+# library(fs)
+# library(readxl)
+# library(DT)
+# library(openxlsx2)
+# library(ggplot2)
+# library(dplyr)
+
+# lapply(list.files("R",
+#   pattern = "[.]R$", 
+#   full.names = TRUE),
+#   source)
+```
+
+# Los datos originales
+
+```{r }
+#| results: false
+
+### Carpetas de datos y nombre del archivo
+fd <- "data/"
+dir("data")
+fn <- "germinacion.csv"
+d0 <- read.csv(paste0(fd, fn))
+
+any(is.na(d0$inoculation)) 
+unique(d0$inoculation)
+sum(d0$inoculation == "")
+```
+
+La tabla de datos del archivo "*__`r fn`__ (d0)*" tiene **`r length(d0[[1]])`** observaciones de **`r length(d0)`** variables: *__`r names(d0)`__*.
+
+Al mirar los datos originales se cargan **`r sum(d0$inoculation == "")`** filas vacías. Las filas vacías tienen las comillas como si estuviesen llenas. Las elimino. 
+
+```{r}
+d0 <- d0[!d0$inoculation == "", ]
+```
+
+Ahora la tabla de datos *d0* tiene **`r length(d0[[1]])`** observaciones de **`r length(d0)`** variables: *__`r names(d0)`__*.
+
+## Fechas de inoculación (*inoculation*), lectura (*reading*) y aislado utilizado (*isolate*)
+
+```{r}
+#| results: hide
+
+table(d0$inoculation, d0$reading)
+d0$inoculation <- as.Date(d0$inoculation, format = "%d/%m/%y")
+d0$reading <- as.Date(d0$reading, format = "%d/%m/%y")
+d0$ndays <- unique(d0$reading - d0$inoculation)
+table(d0$inoculation, d0$isolate, d0$ndays)
+(t1 <- as.data.frame(table(d0$inoculation, d0$isolate, d0$ndays)))
+names(t1) <- c("inoculation", "isolate", "ndays", "freq")
+unique(t1$freq)
+```
+
+Las inoculaciones se han hecho en `r length(unique(d0$inoculation))` fechas diferentes (ver @tbl-fechas). 
+
+En todos los casos el isolate es el mismo ("**`r unique(d0$isolate)`**"). También en todos los casos el número de días entre *isolate* y *reading* es de **`r unique(d0$reading - d0$inoculation)`**. 
+
+Si es el mismo no hacía falta meterlo en la tabla de datos. Había valido con apuntarlo en readme o en la leyenda que falta. 
+
+En cada fecha de inoculación se han medido **`r unique(t1$freq)`** eppendorfs. 
+
+```{r tbl-fechas}
+#| tbl-cap: Aislado (*isolate*), número de días entre inoculación (*inoculation*) y lectura (*reading*) y número de eppendors analizados (*freq*) para cada repetición o fecha de inoculación (*inoculation*).
+kable(t1)
+```
+
+## Set de tratamientos (*treat.set*)
+
+```{r}
+#| results: hide
+
+table(d0$inoculation, d0$treat.set)
+(t2 <- as.data.frame.matrix(table(d0$inoculation, d0$treat.set)))
+kable(t2)
+unique(d0$treat.set)
+```
+
+Hay **`r length(unique(d0$treat.set))`** sets de tratamientos (*treat.set*): *__`r unique(d0$treat.set)`__*. 
+
+Cada uno de los sets de tratamientos se ha repetido en tres fechas diferentes (ver @tbl-sets). 
+
+```{r tbl-sets}
+#| tbl-cap: Sets de tratamientos (*treat.set*) para cada repetición o fecha de inoculación (*inoculation*).
+kable(t2)
+```
+
+## Tratamientos (*treatment*)
+
+```{r}
+#| results: hide
+table(d0$treatment, d0$treat.set)
+(t3 <- as.data.frame.matrix(table(d0$treatment, d0$treat.set)))
+(t4 <- as.data.frame(table(d0$inoculation, d0$treatment, d0$treat.set)))
+(t4 <- t4[t4$Freq > 0, ])
+names(t4) <- c("inoculation", "treatment", "treat.set", "freq")
+unique(d0$treatment)
+```
+
+Se han evaluado  **`r length(unique(d0$treatment))`** tratamientos diferentes (*treatment*): *__`r unique(d0$treatment)`__*. 
+
+Hay tres tratamientos: Control positivo (*C+*), control negativo (*C-*) y dodine (*do*) que se repiten en los **`r length(unique(d0$treat.set))`** sets de tratamientos. Aparte de estos tres, en cada set de tratamientos se evaluan 9 tratamientos (ver @tbl-trset y @tbl-trino).
+
+```{r tbl-trset}
+#| tbl-cap: Número de eppendorfs analizados en cada set para cada tratamiento. 
+kable(t3)
+```
+
+```{r tbl-trino}
+#| tbl-cap: Número de eppendorfs analizados en cada fecha, set y tratamiento. 
+kable(t4, row.names = FALSE)
+```
+
+No sería mala idea tenerlos mejor ordenados en la tabla de datos. Tanto los tratamientos, como los sets. 
+
+## Número de esporas observadas, germinadas (*germinated*) y no germinadas (no.germinated)
+
+```{r}
+#| results: hide
+#| fig.show: hide
+
+d0$total <- d0$germinated + d0$no.germinated
+unique(d0$total)
+hist(d0$total)
+sum(d0$total < 100)
+```
+
+En casi todos los eppendorfs se han mirado si han germinado o no 100 esporas (ver @fig-tot). 
+
+Pero hay **`r sum(d0$total < 100)`** eppendorfs en los que no se han podido encontrar ni 100 esporas en todo el eppendorf. En **`r sum(d0$total < 50)`** de ellos ni siquiera se han encontrado 50 esporas. 
+
+```{r fig-tot}
+hist(d0$total)
+
+```
+
+Se me ocurren dos formas de analizar los resultados: 
+
+- Eliminando todos los eppendorfs donde habían menos de 100 esporas, por no tener suficiente carga de esporas y por tanto no ser representativos de lo que sería una buena inoculación. En este caso el número de esporas germinadas coincide con el porcentaje de germinación. 
+
+- Eliminando los eppendorfs con menos de 50 esporas y calculando una variable "porcentaje de germinación" (germPerc) que será la que se analice. 
+
+En ningún caso tendría en cuenta porcentajes calculados con menos de 50 esporas ya que no son suficientemente representativos. Y nos están indicando que esos eppendorfs eran ya desde un principio. 
+
+Para controlar la credibilidad o reproducibilidad de los resultados tenemos los tres tratamientos que se repiten entre sets. Se pueden comparar entre sets y no deberían tener diferencias significativas. 
+
+Por lo demás no separaría los resultados en sets (o igual sí, no lo tengo claro).
+
