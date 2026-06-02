@@ -24,17 +24,6 @@ format:
 
 ```{r include=FALSE}
 library(knitr)
-# library(fs)
-# library(readxl)
-# library(DT)
-# library(openxlsx2)
-# library(ggplot2)
-# library(dplyr)
-
-# lapply(list.files("R",
-#   pattern = "[.]R$", 
-#   full.names = TRUE),
-#   source)
 ```
 
 # Los datos originales

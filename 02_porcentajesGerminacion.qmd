@@ -1,0 +1,98 @@
+---
+# author:
+# - affiliation: Instituto Agroforestal Mediterráneo. Departamento de Ecosistemas Agroforestales.
+#   email: algarsal@upv.es
+#   name: Alfonso Garmendia
+title: Germination of *Alternaria* under different substances
+subtitle: Raymundo Internship. Analisis. 
+title-block-banner: true
+date: last-modified
+date-format: iso
+lang: es-ES
+language:
+  title-block-published: "Última modificación"
+code-fold: true
+toc: true
+toc-location: right-body
+toc-depth: 6
+toc-title: Índice
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+---
+
+```{r include=FALSE}
+library(knitr)
+library(ggplot2)
+library(dplyr)
+```
+
+# Data
+
+```{r }
+#| results: false
+load("data/germination.Rdata")
+
+```
+
+## Clean data
+
+```{r}
+d0 <- germination[!germination$total < 100, ]
+```
+
+Elimino todos los datos con menos de 100 esporas analizadas. 
+
+```{r}
+#| results: false
+(t3 <- as.data.frame.matrix(table(d0$treatment, d0$treat.set)))
+
+```
+
+Ahora la tabla de datos *d0* tiene **`r length(d0[[1]])`** observaciones de **`r length(d0)`** variables: *__`r names(d0)`__*.
+
+Ninguno de los tratamientos se queda con menos de 10 eppendorfs para su evaluación (ver @tbl-trset).
+
+```{r tbl-trset}
+#| tbl-cap: Número de eppendorfs analizados en cada set para cada tratamiento. 
+kable(t3)
+```
+
+# Efectividad de los tratamientos en la inhibición de la germinación
+
+```{r}
+### Calculate means
+t1 <- d0 %>%
+  group_by(treatment) %>%
+  summarise(
+    mean = mean(germinated, na.rm = TRUE),
+    N = n())
+t1 <- t1[order(t1$mean), ]
+
+### Order treatments
+d0$treatment <- factor(d0$treatment, levels = t1$treatment)
+```
+
+En la @fig-germ se puede ver el orden de los tratamientos de menos a más efectivos (o de más germinación a menos). Ni el control negativo (*C-*) ni la dodina (*do*) producen una germinación cercana a cero. 
+
+La reproducibilidad no parece muy buena, al menos para el control positivo (*C+*).
+
+```{r fig-germ}
+#| fig-cap: Porcentaje de esporas germinadas para cada uno de los tratamientos analizados. Ordenados de más a menos. Los colores representan los sets de tratamientos. Hay tres tratamientos que se repiten en los cuantro sets. 
+#| fig-height: 10
+
+
+ggplot(d0, aes(x = treatment, y = germinated, color = treat.set)) +
+  geom_boxplot() + 
+  theme_minimal() +
+  coord_flip()
+```
+
+# Cosas a mejorar
+
+- Análisis de la reproducibilidad (reliability). Comparar entre sets para los controles y la dodina, cada uno por separado. 
+- Análisis estadísticos de las diferencias. Mejor dentro de cada set. 
+
+
+
