@@ -1,8 +1,11 @@
+YAML
 ---
-title: "Fungicide effect evaluation of 24 substances against *Alternaria alternata pv. citri* - Spore Germination Data Anaylsis -"
-author: Raymundo Morán
+title: "Fungicide effect evaluation of 24 substances against *Alternaria alternata pv. citri* (Spore Germination Data Anaylsis)"
+author: "Raymundo Morán"
 format: html
-code-fold: true
+theme: cosmo
+toc: true
+toc-location: left
 ---
 
 # Experiment Set Up
