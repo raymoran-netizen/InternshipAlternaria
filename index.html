@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Raymundo Morán">
+
+<title>Fungicide effect evaluation of 24 substances against Alternaria alternata pv. citri (Spore Germination Data Anaylsis)</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="analysis_files/libs/clipboard/clipboard.min.js"></script>
+<script src="analysis_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="analysis_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="analysis_files/libs/quarto-html/popper.min.js"></script>
+<script src="analysis_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="analysis_files/libs/quarto-html/anchor.min.js"></script>
+<link href="analysis_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="analysis_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="analysis_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="analysis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="analysis_files/libs/bootstrap/bootstrap-8ffd5f67044e5306d9846f29df41dda5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#yaml" id="toc-yaml" class="nav-link active" data-scroll-target="#yaml">YAML</a></li>
+  <li><a href="#experiment-set-up" id="toc-experiment-set-up" class="nav-link" data-scroll-target="#experiment-set-up">Experiment Set Up</a></li>
+  <li><a href="#data-set-up" id="toc-data-set-up" class="nav-link" data-scroll-target="#data-set-up">Data Set Up</a>
+  <ul class="collapse">
+  <li><a href="#pig-calculation" id="toc-pig-calculation" class="nav-link" data-scroll-target="#pig-calculation">PIG Calculation</a></li>
+  </ul></li>
+  <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview">Data Overview</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#weighted-linear-mixed-effects-model" id="toc-weighted-linear-mixed-effects-model" class="nav-link" data-scroll-target="#weighted-linear-mixed-effects-model">Weighted Linear Mixed Effects Model</a></li>
+  <li><a href="#model-diagnoses" id="toc-model-diagnoses" class="nav-link" data-scroll-target="#model-diagnoses">Model Diagnoses</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Fungicide effect evaluation of 24 substances against <em>Alternaria alternata pv. citri</em> (Spore Germination Data Anaylsis)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Raymundo Morán </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="yaml" class="level2">
+<h2 class="anchored" data-anchor-id="yaml">YAML</h2>
+<p>title: “Fungicide effect evaluation of 24 substances against <em>Alternaria alternata pv. citri</em> (Spore Germination Data Anaylsis)” author: “Raymundo Morán” format: html theme: cosmo toc: true toc-location: left —</p>
+</section>
+<section id="experiment-set-up" class="level1">
+<h1>Experiment Set Up</h1>
+<p>24 different substances were evaluated for fungicidal activity against <em>Alternaria alternata pv. citri</em> (8 of them were evaluated at 2 different concentrations giving a total of <strong>32 treatments</strong>) in spore suspensions of glucose dilution + treatment in a 1:1 ratio. Incubated for 24hrs at 25ºC</p>
+<p>The experiment was divided into sets containing the treatments + Negative and Positive Controls + Dodine (a commercial effective fungicide) for comparison. Each treatment and controls had 5 replicates and each set 3 repetitions (3 runs of the experiment) <a href="#fig-treatments" class="quarto-xref">Figure&nbsp;1</a></p>
+<p>After the 24hrs incubation time The Percentage of Spore Germination (%G) was determined by counting the germinated spores out of 100 spores of each treatment replicate. All the data was collected into a csv file</p>
+<div class="cell">
+<div id="fig-treatments" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-treatments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="xejqvuhjum" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xejqvuhjum table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xejqvuhjum thead, #xejqvuhjum tbody, #xejqvuhjum tfoot, #xejqvuhjum tr, #xejqvuhjum td, #xejqvuhjum th {
+  border-style: none;
+}
+
+#xejqvuhjum p {
+  margin: 0;
+  padding: 0;
+}
+
+#xejqvuhjum .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xejqvuhjum .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xejqvuhjum .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xejqvuhjum .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xejqvuhjum .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xejqvuhjum .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xejqvuhjum .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xejqvuhjum .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xejqvuhjum .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xejqvuhjum .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xejqvuhjum .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xejqvuhjum .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xejqvuhjum .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xejqvuhjum .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xejqvuhjum .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xejqvuhjum .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xejqvuhjum .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xejqvuhjum .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xejqvuhjum .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xejqvuhjum .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xejqvuhjum .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xejqvuhjum .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xejqvuhjum .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xejqvuhjum .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xejqvuhjum .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xejqvuhjum .gt_left {
+  text-align: left;
+}
+
+#xejqvuhjum .gt_center {
+  text-align: center;
+}
+
+#xejqvuhjum .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xejqvuhjum .gt_font_normal {
+  font-weight: normal;
+}
+
+#xejqvuhjum .gt_font_bold {
+  font-weight: bold;
+}
+
+#xejqvuhjum .gt_font_italic {
+  font-style: italic;
+}
+
+#xejqvuhjum .gt_super {
+  font-size: 65%;
+}
+
+#xejqvuhjum .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xejqvuhjum .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xejqvuhjum .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xejqvuhjum .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xejqvuhjum .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xejqvuhjum .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xejqvuhjum .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xejqvuhjum .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xejqvuhjum div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col"><strong>Code</strong></th>
+<th id="Substance" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col"><strong>Substance</strong></th>
+<th id="Concentration" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col"><strong>Concentration</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">ac0.5 / ac5</td>
+<td class="gt_row gt_left" headers="Substance">Acetic acid</td>
+<td class="gt_row gt_left" headers="Concentration">0.5% and 5%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">al0.5 / al5</td>
+<td class="gt_row gt_left" headers="Substance">Citric acid</td>
+<td class="gt_row gt_left" headers="Concentration">0.5% and 5%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">at0.5 / at5</td>
+<td class="gt_row gt_left" headers="Substance">Lactic acid</td>
+<td class="gt_row gt_left" headers="Concentration">0.5% and 5%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">am0.5 / am5</td>
+<td class="gt_row gt_left" headers="Substance">Tartaric acid</td>
+<td class="gt_row gt_left" headers="Concentration">0.5% and 5%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">aa0.5 / aa5</td>
+<td class="gt_row gt_left" headers="Substance">Malic acid</td>
+<td class="gt_row gt_left" headers="Concentration">0.5% and 5%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">as0.5 / as5</td>
+<td class="gt_row gt_left" headers="Substance">Ascorbic acid</td>
+<td class="gt_row gt_left" headers="Concentration">0.5% and 5%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">af0.5 / af5</td>
+<td class="gt_row gt_left" headers="Substance">Sorbic acid</td>
+<td class="gt_row gt_left" headers="Concentration">0.5% and 5%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">aasc0.5 / aasc5</td>
+<td class="gt_row gt_left" headers="Substance">Formic acid</td>
+<td class="gt_row gt_left" headers="Concentration">0.5% and 5%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">sl5</td>
+<td class="gt_row gt_left" headers="Substance">Whey</td>
+<td class="gt_row gt_left" headers="Concentration">5%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">lp1</td>
+<td class="gt_row gt_left" headers="Substance">Milk powder</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">ldv10</td>
+<td class="gt_row gt_left" headers="Substance">Skimmed milk</td>
+<td class="gt_row gt_left" headers="Concentration">10%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">lsv5</td>
+<td class="gt_row gt_left" headers="Substance">Semi-skimmed milk</td>
+<td class="gt_row gt_left" headers="Concentration">5%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">lev3</td>
+<td class="gt_row gt_left" headers="Substance">Whole milk</td>
+<td class="gt_row gt_left" headers="Concentration">3%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">yn1</td>
+<td class="gt_row gt_left" headers="Substance">Plain yogurt</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">ke1</td>
+<td class="gt_row gt_left" headers="Substance">Kefir</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">lsc5</td>
+<td class="gt_row gt_left" headers="Substance">Goat milk</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">CaOH2</td>
+<td class="gt_row gt_left" headers="Substance">Calcium hydroxide</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">NaHCO3</td>
+<td class="gt_row gt_left" headers="Substance">Sodium bicarbonate</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">KOH</td>
+<td class="gt_row gt_left" headers="Substance">Potassium hydroxide</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">NH4NO3</td>
+<td class="gt_row gt_left" headers="Substance">Ammonium nitrate</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">KNO3</td>
+<td class="gt_row gt_left" headers="Substance">Potassium nitrate</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">NH4SO4</td>
+<td class="gt_row gt_left" headers="Substance">Ammonium sulfate</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">CuSO4</td>
+<td class="gt_row gt_left" headers="Substance">Copper sulfate</td>
+<td class="gt_row gt_left" headers="Concentration">1%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">CaCO3</td>
+<td class="gt_row gt_left" headers="Substance">Calcium carbonate</td>
+<td class="gt_row gt_left" headers="Concentration">5%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">C-</td>
+<td class="gt_row gt_left" headers="Substance">Negative Control etOH</td>
+<td class="gt_row gt_left" headers="Concentration">70%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code">C+</td>
+<td class="gt_row gt_left" headers="Substance">Positive Control glucose solution</td>
+<td class="gt_row gt_left" headers="Concentration">-</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code">do</td>
+<td class="gt_row gt_left" headers="Substance">Syllit MaX Dodine</td>
+<td class="gt_row gt_left" headers="Concentration">54.4% (2.6 ml/l)</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="3" class="gt_sourcenote">To prevent redundant rows, substances tested at dual concentrations (0.5% and 5%) are consolidated into single entries. Single-dose treatments comprising dairy derivatives (whey, milk powder, skimmed milk, semi-skimmed milk, whole milk, natural yogurt, and kefir) and inorganic salts are specified at their precise operational concentration (1%, 3%, 5%, or 10%).</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-treatments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Summary of the experimental treatments evaluated in the assay, mapping database codes to their respective descriptions and percentage concentrations (%)
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="data-set-up" class="level1">
+<h1>Data Set Up</h1>
+<p>After consulting bibliography for fungicide assessment, Kos K. 2002 formula for <strong>Percentage of Inhibition of Germination</strong> <span class="math inline">\((PIG)\)</span> was selected</p>
+<p>To quantify the inhibition of germination caused by each treatment relative to the positive control of each set, calculated as:</p>
+<p><span class="math display">\[
+PIG = \left(\frac{G_{PC} - G_{T}}{G_{PC}}\right)\times100
+\]</span> where:</p>
+<ul>
+<li>(<strong>PIG</strong>) = Percentage of Inhibition of Germination (%)</li>
+<li>(<strong>GPC</strong>) = Germination percentage of the positive control (%)</li>
+<li>(<strong>GT</strong>) = Germination percentage of the treatment (%)</li>
+</ul>
+<p>where:</p>
+<p><span class="math display">\[
+G = \left(\frac{germinated}{germinated + no.germinated}\right)\times100
+\]</span> For PIG a value of 0% indicates no inhibition relative to the positive control, whereas a value of 100% indicates complete inhibition of germination. Negatives values would indicate that the treatment not did only fail to inhibit germination but helped to increase it relatively to the positive control.</p>
+<section id="pig-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="pig-calculation">PIG Calculation</h3>
+<p>To calculate the PIG for each treatment, the positive control (C+) G of each set was calculated, the C+ values were extracted and then the mean of the C+G’s were introduced to it’s correspondent set repetition into the data base.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data base loading</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"germinacion.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Cleaning of the data since it had "missing" values </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(germinated) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(no.germinated) <span class="sc">&amp;</span> treatment <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">germinated =</span> <span class="fu">as.numeric</span>(germinated),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">no_germinated =</span> <span class="fu">as.numeric</span>(no.germinated),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_spores =</span> germinated <span class="sc">+</span> no.germinated, <span class="co"># Total Spores count</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct_germination =</span> (germinated <span class="sc">/</span> total_spores) <span class="sc">*</span> <span class="dv">100</span> <span class="co"># G Calculation</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># G for the Positive Control </span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraction of the Positive Control Values </span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>control_rates <span class="ot">&lt;-</span> cleaned_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(treatment <span class="sc">==</span> <span class="st">"C+"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(inoculation, treat.set) <span class="sc">%&gt;%</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">control_pct_mean =</span> <span class="fu">mean</span>(pct_germination, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">'drop'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Introduction of the Positive Control G correspondent to each set repetition</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># PIG Calculation</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>analyzed_data <span class="ot">&lt;-</span> cleaned_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(control_rates, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"inoculation"</span>, <span class="st">"treat.set"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">PIG =</span> ((control_pct_mean <span class="sc">-</span> pct_germination) <span class="sc">/</span> control_pct_mean) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(treatment <span class="sc">!=</span> <span class="st">"C+"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="data-overview" class="level1">
+<h1>Data Overview</h1>
+<p>To better understand if the calculation of the <span class="math inline">\(PIG\)</span> helps into the analysis of the data, looking at the distribution of the percentages of germination per treatment evaluation compared to the <span class="math inline">\(PIG\)</span> might give a better insight. Since the <span class="math inline">\(PIG\)</span> is calculated on each inoculation date positive control germination rate is absorbing some errors due the behavior of the inoculum and normalizing the data, as shown in the <a href="#fig-normalization-comparison" class="quarto-xref">Figure&nbsp;2</a></p>
+<p>Point out that the raw germination rate centers around a very low baseline (averaging roughly 10% to 15% overall, even for controls). Because the fungus germinates at different absolute intensities from week to week based on batch life, raw data spreads this biological background noise across the entire graph.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>processed_data <span class="ot">&lt;-</span> cleaned_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(control_rates, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"inoculation"</span>, <span class="st">"treat.set"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">PIG =</span> ((control_pct_mean <span class="sc">-</span> pct_germination) <span class="sc">/</span> control_pct_mean) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">substance_clean =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ac0.5"</span>, <span class="st">"ac5"</span>) <span class="sc">~</span> <span class="st">"Acetic acid"</span>, <span class="co"># &lt;-- FIXED TYPO HERE</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"al0.5"</span>, <span class="st">"al5"</span>) <span class="sc">~</span> <span class="st">"Citric acid"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"at0.5"</span>, <span class="st">"at5"</span>) <span class="sc">~</span> <span class="st">"Lactic acid"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"am0.5"</span>, <span class="st">"am5"</span>) <span class="sc">~</span> <span class="st">"Tartaric acid"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"aa0.5"</span>, <span class="st">"aa5"</span>) <span class="sc">~</span> <span class="st">"Malic acid"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"as0.5"</span>, <span class="st">"as5"</span>) <span class="sc">~</span> <span class="st">"Ascorbic acid"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"af0.5"</span>, <span class="st">"af5"</span>) <span class="sc">~</span> <span class="st">"Sorbic acid"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"aasc0.5"</span>, <span class="st">"aasc5"</span>) <span class="sc">~</span> <span class="st">"Formic acid"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"sl5"</span> <span class="sc">~</span> <span class="st">"Whey"</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"lp1"</span> <span class="sc">~</span> <span class="st">"Milk powder"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"ldv10"</span> <span class="sc">~</span> <span class="st">"Skimmed milk"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"lsv5"</span> <span class="sc">~</span> <span class="st">"Semi-skimmed milk"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"lev3"</span> <span class="sc">~</span> <span class="st">"Whole milk"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"lsc5"</span> <span class="sc">~</span> <span class="st">"Goat milk"</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"yn1"</span> <span class="sc">~</span> <span class="st">"Plain yogurt"</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"ke1"</span> <span class="sc">~</span> <span class="st">"Kefir"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"CaOH2"</span> <span class="sc">~</span> <span class="st">"Calcium hydroxide"</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"NaHCO3"</span> <span class="sc">~</span> <span class="st">"Sodium bicarbonate"</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"KOH"</span> <span class="sc">~</span> <span class="st">"Potassium hydroxide"</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"NH4NO3"</span> <span class="sc">~</span> <span class="st">"Ammonium nitrate"</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"KNO3"</span> <span class="sc">~</span> <span class="st">"Potassium nitrate"</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"NH4SO4"</span> <span class="sc">~</span> <span class="st">"Ammonium sulfate"</span>,</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"CuSO4"</span> <span class="sc">~</span> <span class="st">"Copper sulfate"</span>,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"CaCO3"</span> <span class="sc">~</span> <span class="st">"Calcium carbonate"</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> treatment</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">concentration_clean =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"0.5"</span>, treatment) <span class="sc">~</span> <span class="st">"Low (0.5%)"</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"5"</span>, treatment) <span class="sc">&amp;</span> treatment <span class="sc">!=</span> <span class="st">"sl5"</span> <span class="sc">~</span> <span class="st">"High (5%)"</span>,</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Single Dose"</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>normalization_comparison_data <span class="ot">&lt;-</span> processed_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(pct_germination, PIG) <span class="sc">%&gt;%</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">everything</span>(), </span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Metric"</span>, </span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"Value"</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Metric =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    Metric <span class="sc">==</span> <span class="st">"pct_germination"</span> <span class="sc">~</span> <span class="st">"Raw Germination Rate (%)"</span>,</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    Metric <span class="sc">==</span> <span class="st">"PIG"</span> <span class="sc">~</span> <span class="st">"Inhibition of Germination (PIG %)"</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Metric =</span> <span class="fu">factor</span>(Metric, <span class="at">levels =</span> <span class="fu">c</span>(</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Raw Germination Rate (%)"</span>, </span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Inhibition of Germination (PIG %)"</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  )))</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.  histograms </span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(normalization_comparison_data, <span class="fu">aes</span>(<span class="at">x =</span> Value, <span class="at">fill =</span> Metric)) <span class="sc">+</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">25</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Metric, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  color palette choice</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Raw Germination Rate (%)"</span> <span class="ot">=</span> <span class="st">"steelblue4"</span>, </span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Inhibition of Germination (PIG %)"</span> <span class="ot">=</span> <span class="st">"darkorange3"</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Data Distribution Profile: Before and After PIG Normalization"</span>,</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Demonstrating how anchoring data to the positive control (C+) centers the experimental baseline"</span>,</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Measured Value (%)"</span>,</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequency (Count of Observations)"</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"gray30"</span>),</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"lines"</span>) </span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-normalization-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normalization-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analysis_files/figure-html/fig-normalization-comparison-1.png" class="img-fluid figure-img" width="1056">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normalization-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Side-by-side comparison of the distribution of Raw Germination Rates vs.&nbsp;Model-Adjusted Percentage of Inhibition of Germination (PIG).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Although in almost 10% of the replicates the <span class="math inline">\(total.spores\)</span> counted were not = 100, some even less than 50. To avoid filtering data and keep the same amount of replicates. A weighted model that considers the total count of spores will ideally help the analysis.</p>
+<p>The evident peak on the <span class="math inline">\(PIG\)</span> distribution is due to the number of replicates from <span class="math inline">\(C-\)</span> and <span class="math inline">\(do\)</span> that were included in every set (inoculation date).</p>
+<p>This plot proves that analyzing raw germination percentages directly would mask the real performance of the organic acids and milk elements due to the overlapping baseline noise of different inoculation dates. Transforming to PIG isolates better the treatment efficacy.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Classify your 12 dates into a clean 4x3 grid structure</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>matrix_plot_data <span class="ot">&lt;-</span> processed_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(treatment <span class="sc">!=</span> <span class="st">"C+"</span>) <span class="sc">%&gt;%</span> <span class="co"># Exclude positive control (always 0%)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Row assignment: group substances together</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">exp_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      inoculation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'25/03/26'</span>, <span class="st">'26/03/26'</span>, <span class="st">'30/03/26'</span>) <span class="sc">~</span> <span class="st">"Organic Acids (Group A)"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      inoculation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'14/04/26'</span>, <span class="st">'15/04/26'</span>, <span class="st">'16/04/26'</span>) <span class="sc">~</span> <span class="st">"Organic Acids (Group B)"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      inoculation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'10/03/26'</span>, <span class="st">'11/03/26'</span>, <span class="st">'23/03/26'</span>) <span class="sc">~</span> <span class="st">"Dairy &amp; Fermented Products"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      inoculation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'21/04/26'</span>, <span class="st">'22/04/26'</span>, <span class="st">'23/04/26'</span>) <span class="sc">~</span> <span class="st">"Inorganic Salts &amp; Alkalis"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Column assignment: separate the 3 independent runs</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">run_num =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      inoculation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'10/03/26'</span>, <span class="st">'25/03/26'</span>, <span class="st">'14/04/26'</span>, <span class="st">'21/04/26'</span>) <span class="sc">~</span> <span class="st">"Run 1"</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      inoculation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'11/03/26'</span>, <span class="st">'26/03/26'</span>, <span class="st">'15/04/26'</span>, <span class="st">'22/04/26'</span>) <span class="sc">~</span> <span class="st">"Run 2"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      inoculation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'23/03/26'</span>, <span class="st">'30/03/26'</span>, <span class="st">'16/04/26'</span>, <span class="st">'23/04/26'</span>) <span class="sc">~</span> <span class="st">"Run 3"</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to explicit factors to guarantee the correct layout sequence</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">run_num =</span> <span class="fu">factor</span>(run_num, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Run 1"</span>, <span class="st">"Run 2"</span>, <span class="st">"Run 3"</span>)),</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">exp_group =</span> <span class="fu">factor</span>(exp_group, <span class="at">levels =</span> <span class="fu">c</span>(</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Organic Acids (Group A)"</span>, <span class="st">"Organic Acids (Group B)"</span>, </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Dairy &amp; Fermented Products"</span>, <span class="st">"Inorganic Salts &amp; Alkalis"</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Plot the master overview matrix</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(matrix_plot_data, <span class="fu">aes</span>(<span class="at">x =</span> substance_clean, <span class="at">y =</span> PIG, <span class="at">fill =</span> exp_group)) <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.75</span>, <span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"gray20"</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The Magic Combination: 3 columns + free horizontal axes isolates </span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># each run's data dynamically while maintaining an orderly matrix format</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(exp_group <span class="sc">~</span> run_num, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span> <span class="co"># Distinct color for each row group</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Data Overview Matrix: Treatment Performance Across Experimental Runs"</span>,</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Rows separate substance classifications; columns break down tracking across independent inoculation dates"</span>,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Tested Substance"</span>,</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Inhibition of Germination (PIG %)"</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"gray93"</span>, <span class="at">color =</span> <span class="st">"gray80"</span>),</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing.y =</span> <span class="fu">unit</span>(<span class="fl">1.5</span>, <span class="st">"lines"</span>), <span class="co"># Creates breathing room between compound rows</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing.x =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"lines"</span>),   <span class="co"># Standardizes horizontal gap between runs</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>)</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-pig-matrix-grid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pig-matrix-grid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analysis_files/figure-html/fig-pig-matrix-grid-1.png" class="img-fluid figure-img" width="1248">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pig-matrix-grid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Experimental Overview Matrix: PIG distribution grouped by compound family (rows) and separated by chronological inoculation runs (columns).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Now analyzing more in detail the <span class="math inline">\(PIG\)</span> along the 3 runs of each set. There are key aspects to highlight: Horizontally across any row, it is immediately clear that the performance of the exact same substances shifts between independent runs. For example, in the Dairy &amp; Fermented Products row, Run 1 and Run 2 show clean, relatively tight distributions with positive inhibition, whereas Run 3 shows a massive drop into negative values and a much wider vertical spread. This indicates that external environmental conditions on the day of inoculation (e.g., ambient temperature, spore batch vitality, or humidity) introduced a distinct “batch effect.”</p>
+<p>The matrix allows to spot which treatments are robust and which are unstable. If a substance has boxes hovering at a stable height across all three columns, it represents a highly predictable treatment. If a substance’s box stretches wildly or jumps up and down between runs, its efficacy is highly dependent on environmental interactions.</p>
+<p>Several runs (such as Organic Acids Group B - Run 2) show boxes dipping significantly below <span class="math inline">\(0\%\)</span>. In your data overview, you should point out that this visualizes instances where the treatment actually allowed more germination than the positive control (<span class="math inline">\(C+\)</span>), emphasizing that the baseline is not flat and can fluctuate dynamically.</p>
+</section>
+<section id="data-analysis" class="level1">
+<h1>Data Analysis</h1>
+<p>Since the past analysis have found substantial horizontal shifts in median PIG levels and vertical box spreads are visible across the three independent runs of each substance group, indicating strong batch-specific environmental noise tied to individual inoculation dates. As well as, a variance that is highly heteroscedastic across experimental cells.</p>
+<p>To account for this hierarchical dependency and unequal variance structure without losing statistical power, a <strong>Linear Mixed-Effects Model (lmer)</strong> is proposed to analyse this dataset.</p>
+<p>Standard ordinary least squares (OLS) regression assumes that all observations are independent and exhibit constant variance (homoscedasticity). However, this experimental design breaks these assumptions in two ways:</p>
+<ul>
+<li><p>Effects (Clustering): Treatments were evaluated across 12 distinct inoculation dates. Environmental conditions unique to each date create shared correlation among replicates within the same batch.</p></li>
+<li><p>Sampling Precision: Germination rates are calculated from raw microscopic spore counts where the total number of observed spores (<span class="math inline">\(n\)</span>) fluctuates between replicates. A percentage derived from a large sample size is intrinsically more precise than one derived from a small sample size.To resolve these issues, a mixed-effects framework was implemented via the lmer function in the lme4 package for R.</p></li>
+</ul>
+<p>Inoculation date was designated as a random intercept effect, allowing the model to isolate and subtract temporal batch noise from the fixed treatment effects. Furthermore, the model was weighted by the total spore count (<span class="math inline">\(n\)</span>) of each individual replicate. This incorporates binomial sampling precision directly into the estimation process, ensuring that high-precision observations contribute proportionally more weight to the final parameter estimates while protecting standard errors against heteroscedastic inflation.</p>
+<section id="weighted-linear-mixed-effects-model" class="level3">
+<h3 class="anchored" data-anchor-id="weighted-linear-mixed-effects-model">Weighted Linear Mixed Effects Model</h3>
+<p>To evaluate the efficacy of the various screening compounds and organic acid treatments while simultaneously controlling for the hierarchical experimental design and the inherently heteroscedastic nature of the bio-assay dataset, data were analyzed using a <strong>Weighted Linear Mixed Effects Model (LMM)</strong>.</p>
+<p>For that we need to stablish our variables and effects:</p>
+<ul>
+<li><p>&nbsp;<strong>The Response Variable</strong>&nbsp;(<span class="math inline">\(PIG\)</span>): The Percentage of Inhibition of Germination. A higher, positive value means the treatment is successfully stopping fungal spores from germinating. A value near 0 means it behaves identically to your Positive Control (<span class="math inline">\(C+\)</span>). A negative value means spores germinated more than they did in the positive control.</p></li>
+<li><p>&nbsp;<strong>The Fixed Effect</strong>&nbsp;<span class="math inline">\(treatment\)</span>: We believe that each treatment has a different effect on the variable.</p></li>
+<li><p>&nbsp;<strong>The Random Effect</strong>&nbsp; (<span class="math inline">\(1 | inoculation\)</span>): Fungal spores are living organisms; their baseline germination rate can drift from week to week based on ambient lab temperature, humidity, or the specific age of the spore batch. By adding this term, the model isolates and removes this “batch-to-batch noise.” The treatment effects you see are clean, adjusted estimates, as if every single treatment had been run on the exact same perfect day.</p></li>
+<li><p>&nbsp;<strong>The Weights</strong>&nbsp; <span class="math inline">\(weights = total.spores\)</span>: Not all experimental replicates are mathematically equal. An Eppendorf tube where you successfully counted 100 spores provides a much more accurate representation of reality than a tube where only 20 spores were found. The model automatically weights rows with higher spore counts more heavily, protecting your conclusions from small-sample distortions.</p></li>
+</ul>
+<section id="model" class="level4">
+<h4 class="anchored" data-anchor-id="model">Model</h4>
+<p>For screening all the substances evaluated, the structural variation in <span class="math inline">\(\text{PIG}\)</span> is modeled as a function of an independent categorical treatment fixed effect, adjusted for random batch variation:</p>
+<p><span class="math display">\[Y_{ijk} = \beta_0 + \tau_i + \gamma_j + \varepsilon_{ijk}\]</span></p>
+<p><span class="math display">\[\gamma_j \sim N(0, \sigma^2_{\gamma}), \quad \varepsilon_{ijk} \sim N\left(0, \frac{\sigma^2_{\varepsilon}}{w_{ijk}}\right)\]</span></p>
+<p>Where:</p>
+<ul>
+<li>(<span class="math inline">\(Y_{ijk}\)</span>) is the observed <span class="math inline">\(\text{PIG}\)</span> response for treatment <span class="math inline">\(i\)</span>, during inoculation batch <span class="math inline">\(j\)</span>, at replicate <span class="math inline">\(k\)</span>.</li>
+<li>(<span class="math inline">\(\beta_0\)</span>) is the global model intercept.<span class="math inline">\(\tau_i\)</span> represents the fixed effect of the <span class="math inline">\(i\)</span>-th single-dose treatment compound.</li>
+<li>(<span class="math inline">\(\gamma_j\)</span>) is the random intercept for the <span class="math inline">\(j\)</span>-th inoculation date, assumed to be normally distributed with variance <span class="math inline">\(\sigma^2_{\gamma}\)</span>.</li>
+<li>(<span class="math inline">\(\varepsilon_{ijk}\)</span>) is the residual error term, where <span class="math inline">\(w_{ijk}\)</span> represents the precision weight defined by the total spore count (<span class="math inline">\(n_{ijk} = \text{germinated} + \text{no germinated}\)</span>) for that specific observation.</li>
+</ul>
+<p>to better understand the results, a comparison with both Dodine and the Negative Control as baselines in the posthoc analyses were established <a href="#tbl-integrated-matrix" class="quarto-xref">Table&nbsp;1</a></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmerTest) </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans) </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Isolate and construct a unified master treatment category for every condition</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>global_integrated_data <span class="ot">&lt;-</span> processed_data <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(treatment <span class="sc">!=</span> <span class="st">"C+"</span>) <span class="sc">%&gt;%</span> <span class="co"># Keep our mathematical 0% anchor separate</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a clean, standardized naming string for everything</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">global_treatment =</span> <span class="fu">case_when</span>(</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"do"</span> <span class="sc">~</span> <span class="st">"Dodine Baseline (do)"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      treatment <span class="sc">==</span> <span class="st">"C-"</span> <span class="sc">~</span> <span class="st">"Negative Control (C-)"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">substr</span>(treatment, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"aa"</span>, <span class="st">"ac"</span>, <span class="st">"al"</span>, <span class="st">"at"</span>, <span class="st">"am"</span>, <span class="st">"as"</span>, <span class="st">"af"</span>) <span class="sc">|</span> </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">substr</span>(treatment, <span class="dv">1</span>, <span class="dv">4</span>) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"aasc"</span>) <span class="sc">~</span> <span class="fu">paste0</span>(substance_clean, <span class="st">" ("</span>, <span class="fu">case_when</span>(</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                                                  <span class="fu">grepl</span>(<span class="st">"0.5"</span>, treatment) <span class="sc">~</span> <span class="st">"0.5%"</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                                                  <span class="fu">grepl</span>(<span class="st">"5"</span>, treatment) <span class="sc">~</span> <span class="st">"5.0%"</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                                                ), <span class="st">")"</span>),</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> substance_clean</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">global_treatment =</span> <span class="fu">factor</span>(global_treatment)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Fit the master weighted linear mixed-effects model</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>model_global <span class="ot">&lt;-</span> <span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lmer</span>(</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    PIG <span class="sc">~</span> global_treatment <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> inoculation), </span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> global_integrated_data,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">weights =</span> total_spores</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Compute global Estimated Marginal Means safely</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>em_global <span class="ot">&lt;-</span> <span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">emmeans</span>(model_global, <span class="sc">~</span> global_treatment)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>em_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(em_global)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Safely extract values for our reference baselines from the dataframe</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>dodine_row <span class="ot">&lt;-</span> em_df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(global_treatment <span class="sc">==</span> <span class="st">"Dodine Baseline (do)"</span>)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>cminus_row <span class="ot">&lt;-</span> em_df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(global_treatment <span class="sc">==</span> <span class="st">"Negative Control (C-)"</span>)</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract their exact mean PIG values</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>dodine_mean <span class="ot">&lt;-</span> dodine_row<span class="sc">$</span>emmean[<span class="dv">1</span>]</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>cminus_mean <span class="ot">&lt;-</span> cminus_row<span class="sc">$</span>emmean[<span class="dv">1</span>]</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Compute side-by-side differences directly using cell-by-cell math</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>global_side_by_side_matrix <span class="ot">&lt;-</span> em_df <span class="sc">%&gt;%</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>global_treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Dodine Baseline (do)"</span>, <span class="st">"Negative Control (C-)"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_dodine =</span> emmean <span class="sc">-</span> dodine_mean,</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_cminus =</span> emmean <span class="sc">-</span> cminus_mean</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Extract the real p-values safely using the contrast function</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>p_values_dodine <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">contrast</span>(em_global, <span class="at">method =</span> <span class="st">"trt.vs.ctrl"</span>, <span class="at">ref =</span> <span class="fu">which</span>(<span class="fu">levels</span>(global_integrated_data<span class="sc">$</span>global_treatment) <span class="sc">==</span> <span class="st">"Dodine Baseline (do)"</span>))</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>)))</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>p_values_cminus <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">contrast</span>(em_global, <span class="at">method =</span> <span class="st">"trt.vs.ctrl"</span>, <span class="at">ref =</span> <span class="fu">which</span>(<span class="fu">levels</span>(global_integrated_data<span class="sc">$</span>global_treatment) <span class="sc">==</span> <span class="st">"Negative Control (C-)"</span>))</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>)))</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Isolate p-values and attach them cleanly by matching partial strings</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>global_side_by_side_matrix <span class="ot">&lt;-</span> global_side_by_side_matrix <span class="sc">%&gt;%</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_dodine =</span> p_values_dodine<span class="sc">$</span>p.value[<span class="fu">str_detect</span>(p_values_dodine<span class="sc">$</span>contrast, <span class="fu">fixed</span>(<span class="fu">as.character</span>(global_treatment)))][<span class="dv">1</span>],</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_cminus =</span> p_values_cminus<span class="sc">$</span>p.value[<span class="fu">str_detect</span>(p_values_cminus<span class="sc">$</span>contrast, <span class="fu">fixed</span>(<span class="fu">as.character</span>(global_treatment)))][<span class="dv">1</span>]</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(global_treatment, diff_dodine, p_dodine, diff_cminus, p_cminus) <span class="sc">%&gt;%</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(diff_dodine)) <span class="co"># Sort from best performer to worst</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Generate the final professional thesis table</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>global_side_by_side_matrix <span class="sc">%&gt;%</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Weighted Linear Mixed Effects Model Results"</span>,</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Comprehensive Mixed-Effects Analysis of All Screening Compounds &amp; Organic Acids"</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"Performance vs. Dodine (do)"</span>,</span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(diff_dodine, p_dodine)</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"Performance vs. Negative Control (C-)"</span>,</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(diff_cminus, p_cminus)</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">global_treatment =</span> <span class="st">"Treatment"</span>,</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_dodine =</span> <span class="st">"Δ PIG (%)"</span>,</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_dodine =</span> <span class="st">"p-value"</span>,</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_cminus =</span> <span class="st">"Δ PIG (%)"</span>,</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_cminus =</span> <span class="st">"p-value"</span></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(diff_dodine, diff_cminus), <span class="at">decimals =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_scientific</span>(<span class="at">columns =</span> <span class="fu">c</span>(p_dodine, p_cminus), <span class="at">rows =</span> p_dodine <span class="sc">&lt;</span> <span class="fl">0.001</span> <span class="sc">|</span> p_cminus <span class="sc">&lt;</span> <span class="fl">0.001</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(p_dodine, p_cminus), <span class="at">rows =</span> p_dodine <span class="sc">&gt;=</span> <span class="fl">0.001</span> <span class="sc">&amp;</span> p_cminus <span class="sc">&gt;=</span> <span class="fl">0.001</span>, <span class="at">decimals =</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>),</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> p_dodine, <span class="at">rows =</span> p_dodine <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>),</span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> p_cminus, <span class="at">rows =</span> p_cminus <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-integrated-matrix" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-integrated-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-integrated-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="aurqodkhnl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aurqodkhnl table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#aurqodkhnl thead, #aurqodkhnl tbody, #aurqodkhnl tfoot, #aurqodkhnl tr, #aurqodkhnl td, #aurqodkhnl th {
+  border-style: none;
+}
+
+#aurqodkhnl p {
+  margin: 0;
+  padding: 0;
+}
+
+#aurqodkhnl .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#aurqodkhnl .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#aurqodkhnl .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#aurqodkhnl .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#aurqodkhnl .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#aurqodkhnl .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#aurqodkhnl .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#aurqodkhnl .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#aurqodkhnl .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#aurqodkhnl .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#aurqodkhnl .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#aurqodkhnl .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#aurqodkhnl .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#aurqodkhnl .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#aurqodkhnl .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aurqodkhnl .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#aurqodkhnl .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#aurqodkhnl .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#aurqodkhnl .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aurqodkhnl .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#aurqodkhnl .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aurqodkhnl .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#aurqodkhnl .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aurqodkhnl .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#aurqodkhnl .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aurqodkhnl .gt_left {
+  text-align: left;
+}
+
+#aurqodkhnl .gt_center {
+  text-align: center;
+}
+
+#aurqodkhnl .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#aurqodkhnl .gt_font_normal {
+  font-weight: normal;
+}
+
+#aurqodkhnl .gt_font_bold {
+  font-weight: bold;
+}
+
+#aurqodkhnl .gt_font_italic {
+  font-style: italic;
+}
+
+#aurqodkhnl .gt_super {
+  font-size: 65%;
+}
+
+#aurqodkhnl .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#aurqodkhnl .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#aurqodkhnl .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#aurqodkhnl .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#aurqodkhnl .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#aurqodkhnl .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#aurqodkhnl .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#aurqodkhnl .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#aurqodkhnl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_heading header">
+<td colspan="5" class="gt_heading gt_title gt_font_normal">Weighted Linear Mixed Effects Model Results</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Comprehensive Mixed-Effects Analysis of All Screening Compounds &amp; Organic Acids</td>
+</tr>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" id="global_treatment" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Treatment</th>
+<th colspan="2" id="Performance vs. Dodine (do)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Performance vs. Dodine (do)
+</div></th>
+<th colspan="2" id="Performance vs. Negative Control (C-)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Performance vs. Negative Control (C-)
+</div></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="diff_dodine" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Δ PIG (%)</th>
+<th id="p_dodine" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">p-value</th>
+<th id="diff_cminus" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Δ PIG (%)</th>
+<th id="p_cminus" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">p-value</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Calcium carbonate</td>
+<td class="gt_row gt_right" headers="diff_dodine">3.870</td>
+<td class="gt_row gt_right" headers="p_dodine">0.9997</td>
+<td class="gt_row gt_right" headers="diff_cminus">−0.468</td>
+<td class="gt_row gt_right" headers="p_cminus">1.0000</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Potassium nitrate</td>
+<td class="gt_row gt_right" headers="diff_dodine">−2.173</td>
+<td class="gt_row gt_right" headers="p_dodine">1.0000</td>
+<td class="gt_row gt_right" headers="diff_cminus">−6.512</td>
+<td class="gt_row gt_right" headers="p_cminus">0.9894</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Ammonium nitrate</td>
+<td class="gt_row gt_right" headers="diff_dodine">−2.451</td>
+<td class="gt_row gt_right" headers="p_dodine">1.0000</td>
+<td class="gt_row gt_right" headers="diff_cminus">−6.790</td>
+<td class="gt_row gt_right" headers="p_cminus">0.9862</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Malic acid (0.5%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−2.720</td>
+<td class="gt_row gt_right" headers="p_dodine">1.0000</td>
+<td class="gt_row gt_right" headers="diff_cminus">−7.058</td>
+<td class="gt_row gt_right" headers="p_cminus">0.9854</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Sorbic acid (0.5%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−3.609</td>
+<td class="gt_row gt_right" headers="p_dodine">0.9998</td>
+<td class="gt_row gt_right" headers="diff_cminus">−7.947</td>
+<td class="gt_row gt_right" headers="p_cminus">0.9643</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Lactic acid (0.5%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−9.924</td>
+<td class="gt_row gt_right" headers="p_dodine">0.8872</td>
+<td class="gt_row gt_right" headers="diff_cminus">−14.262</td>
+<td class="gt_row gt_right" headers="p_cminus">0.5183</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Copper sulfate</td>
+<td class="gt_row gt_right" headers="diff_dodine">−11.149</td>
+<td class="gt_row gt_right" headers="p_dodine">0.7983</td>
+<td class="gt_row gt_right" headers="diff_cminus">−15.487</td>
+<td class="gt_row gt_right" headers="p_cminus">0.3873</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Potassium hydroxide</td>
+<td class="gt_row gt_right" headers="diff_dodine">−11.920</td>
+<td class="gt_row gt_right" headers="p_dodine">0.7336</td>
+<td class="gt_row gt_right" headers="diff_cminus">−16.258</td>
+<td class="gt_row gt_right" headers="p_cminus">0.3191</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Citric acid (0.5%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−13.127</td>
+<td class="gt_row gt_right" headers="p_dodine">0.6398</td>
+<td class="gt_row gt_right" headers="diff_cminus">−17.465</td>
+<td class="gt_row gt_right" headers="p_cminus">0.2460</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Citric acid (5.0%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−13.648</td>
+<td class="gt_row gt_right" headers="p_dodine">0.5831</td>
+<td class="gt_row gt_right" headers="diff_cminus">−17.987</td>
+<td class="gt_row gt_right" headers="p_cminus">0.2056</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Ascorbic acid (0.5%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−15.857</td>
+<td class="gt_row gt_right" headers="p_dodine">0.3539</td>
+<td class="gt_row gt_right" headers="diff_cminus">−20.195</td>
+<td class="gt_row gt_right" headers="p_cminus">0.0883</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Semi-skimmed milk</td>
+<td class="gt_row gt_right" headers="diff_dodine">−18.063</td>
+<td class="gt_row gt_right" headers="p_dodine">0.1917</td>
+<td class="gt_row gt_right" headers="diff_cminus">−22.402</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">0.0357</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Lactic acid (5.0%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−18.431</td>
+<td class="gt_row gt_right" headers="p_dodine">0.2033</td>
+<td class="gt_row gt_right" headers="diff_cminus">−22.770</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">0.0420</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Ascorbic acid (5.0%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−18.827</td>
+<td class="gt_row gt_right" headers="p_dodine">0.1457</td>
+<td class="gt_row gt_right" headers="diff_cminus">−23.165</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">0.0249</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Sorbic acid (5.0%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−20.003</td>
+<td class="gt_row gt_right" headers="p_dodine">0.0951</td>
+<td class="gt_row gt_right" headers="diff_cminus">−24.341</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">0.0142</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Formic acid (0.5%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−20.164</td>
+<td class="gt_row gt_right" headers="p_dodine">0.0894</td>
+<td class="gt_row gt_right" headers="diff_cminus">−24.503</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">0.0131</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Tartaric acid (5.0%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−21.651</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">0.0490</td>
+<td class="gt_row gt_right" headers="diff_cminus">−25.990</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">0.0060</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Acetic acid (0.5%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−22.920</td>
+<td class="gt_row gt_right" headers="p_dodine">0.0587</td>
+<td class="gt_row gt_right" headers="diff_cminus">−27.258</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">0.0090</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Calcium hydroxide</td>
+<td class="gt_row gt_right" headers="diff_dodine">−25.685</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">7.12&nbsp;×&nbsp;10<sup>−3</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−30.023</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">5.77&nbsp;×&nbsp;10<sup>−4</sup></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Formic acid (5.0%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−26.951</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">3.58&nbsp;×&nbsp;10<sup>−3</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−31.289</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">2.56&nbsp;×&nbsp;10<sup>−4</sup></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Tartaric acid (0.5%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−29.420</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">8.40&nbsp;×&nbsp;10<sup>−4</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−33.758</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">4.75&nbsp;×&nbsp;10<sup>−5</sup></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Sodium bicarbonate</td>
+<td class="gt_row gt_right" headers="diff_dodine">−30.430</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">4.46&nbsp;×&nbsp;10<sup>−4</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−34.769</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">2.30&nbsp;×&nbsp;10<sup>−5</sup></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Malic acid (5.0%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−31.057</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">3.97&nbsp;×&nbsp;10<sup>−4</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−35.395</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">2.11&nbsp;×&nbsp;10<sup>−5</sup></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Whole milk</td>
+<td class="gt_row gt_right" headers="diff_dodine">−34.530</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">4.09&nbsp;×&nbsp;10<sup>−5</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−38.868</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">1.52&nbsp;×&nbsp;10<sup>−6</sup></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Acetic acid (5.0%)</td>
+<td class="gt_row gt_right" headers="diff_dodine">−36.502</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">1.53&nbsp;×&nbsp;10<sup>−5</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−40.840</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">5.73&nbsp;×&nbsp;10<sup>−7</sup></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Plain yogurt</td>
+<td class="gt_row gt_right" headers="diff_dodine">−36.649</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">2.58&nbsp;×&nbsp;10<sup>−5</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−40.988</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">1.04&nbsp;×&nbsp;10<sup>−6</sup></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Goat milk</td>
+<td class="gt_row gt_right" headers="diff_dodine">−36.954</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">4.91&nbsp;×&nbsp;10<sup>−6</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−41.293</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">1.34&nbsp;×&nbsp;10<sup>−7</sup></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Kefir</td>
+<td class="gt_row gt_right" headers="diff_dodine">−41.662</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">1.09&nbsp;×&nbsp;10<sup>−6</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−46.000</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">3.27&nbsp;×&nbsp;10<sup>−8</sup></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Ammonium sulfate</td>
+<td class="gt_row gt_right" headers="diff_dodine">−42.389</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">4.92&nbsp;×&nbsp;10<sup>−8</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−46.727</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">8.78&nbsp;×&nbsp;10<sup>−10</sup></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Skimmed milk</td>
+<td class="gt_row gt_right" headers="diff_dodine">−43.653</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">1.81&nbsp;×&nbsp;10<sup>−8</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−47.991</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">2.69&nbsp;×&nbsp;10<sup>−10</sup></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="global_treatment">Milk powder</td>
+<td class="gt_row gt_right" headers="diff_dodine">−43.869</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">2.79&nbsp;×&nbsp;10<sup>−8</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−48.208</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">4.64&nbsp;×&nbsp;10<sup>−10</sup></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="global_treatment">Whey</td>
+<td class="gt_row gt_right" headers="diff_dodine">−53.762</td>
+<td class="gt_row gt_right" headers="p_dodine" style="color: #006400; font-weight: bold">7.64&nbsp;×&nbsp;10<sup>−13</sup></td>
+<td class="gt_row gt_right" headers="diff_cminus">−58.100</td>
+<td class="gt_row gt_right" headers="p_cminus" style="color: #006400; font-weight: bold">9.68&nbsp;×&nbsp;10<sup>−14</sup></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Before diving into individual compounds, we must address a critical statistical phenomenon occurring in the columns:The Δ PIG (%) values are negative across almost the entire table—even when compared to the Negative Control (C-).For example, look at Malic Acid (0.5%): its performance is <span class="math inline">\(-7.058\%\)</span> compared to C-.What this means statistically: A negative <span class="math inline">\(\Delta\text{ PIG}\)</span> against <span class="math inline">\(C-\)</span> or <span class="math inline">\(do\)</span> means that they were performing well as baselines for comparison</p>
+<p>For all 11 of these treatment groups listed above, the model fails to reject the null hypothesis of no difference against Dodine (<span class="math inline">\(p &gt; 0.05\)</span>). and so they are completely non-significant against the Negative Control (C-).</p>
+<p><strong>Calcium carbonate</strong> is descriptively a top performer, yielding a <span class="math inline">\(+3.870\%\)</span> increase in inhibition over Dodine, though they are statistically tied. So does the Potassium nitrate, Ammonium nitrate, Malic acid (0.5%), Sorbic acid (0.5%), Lactic acid (0.5%), Copper sulfate, Potassium hydroxide, Citric acid (0.5% and 5%), and Ascorbic acid (0.5%).</p>
+<p><em>Dose-Response Reversals</em> Increasing the concentration made the anti germination efficacy significantly worse.</p>
+<ul>
+<li><p><strong>Malic Acid:</strong> At a low dose (<strong>0.5%</strong>), Malic acid is a top-tier performer statistically identical to Dodine (<span class="math inline">\(\Delta = -2.720\%\)</span>, <span class="math inline">\(p = 1.0000\)</span>). However, when bumped up to <strong>5.0%</strong>, its efficacy crashes drastically (<span class="math inline">\(\Delta = -31.057\%\)</span>, <span class="math inline">\(p = 3.97 \times 10^{-4}\)</span>).</p></li>
+<li><p><strong>Acetic Acid &amp; Sorbic Acid:</strong> * Sorbic acid shifts from a safe performance at 0.5% (<span class="math inline">\(p = 0.9998\)</span>) down to a marginally significant drop at 5.0% (<span class="math inline">\(\Delta = -20.003\%\)</span>, <span class="math inline">\(p = 0.0951\)</span>).</p></li>
+<li><p><strong>Acetic acid</strong> drops from <span class="math inline">\(\Delta = -22.920\%\)</span> at 0.5% to a severe <span class="math inline">\(\Delta = -36.502\%\)</span> (<span class="math inline">\(p = 1.53 \times 10^{-5}\)</span>) at 5.0%.</p></li>
+</ul>
+<p>At high concentrations (5.0%), these specific organic acids are no longer acting as stressors; instead, the fungi are likely metabolizing them as carbon/energy sources, leading to massive germination spikes.</p>
+<p>All of the other treatments (23) fail to inhibit germination to the level of Dodine, making them not trustful as fungicides (or at least at those concentrations) as shown in all the red dots in <a href="#fig-global-efficacy-forest" class="quarto-xref">Figure&nbsp;4</a></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Prepare data for plotting using Dodine as the direct baseline subtraction</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> global_side_by_side_matrix <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># STRICT COLOR CLASSIFICATION: Matches the 11 true top performers exactly</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Category =</span> <span class="fu">case_when</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      p_dodine <span class="sc">&gt;=</span> <span class="fl">0.05</span> <span class="sc">&amp;</span> diff_dodine <span class="sc">&gt;=</span> <span class="sc">-</span><span class="fl">16.0</span> <span class="sc">~</span> <span class="st">"Statistically Equivalent to Dodine"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Significantly Different from Dodine"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Category =</span> <span class="fu">factor</span>(Category, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Statistically Equivalent to Dodine"</span>, </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Significantly Different from Dodine"</span>))</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract the exact standard errors from the original EMMeans dataframe for the error bars</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>se_shared <span class="ot">&lt;-</span> em_df <span class="sc">%&gt;%</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>global_treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Dodine Baseline (do)"</span>, <span class="st">"Negative Control (C-)"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(global_treatment, SE)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge standard errors back into our plotting matrix</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> plot_data <span class="sc">%&gt;%</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(se_shared, <span class="at">by =</span> <span class="st">"global_treatment"</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Build the centered, highly detailed ggplot asset</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> diff_dodine, <span class="at">y =</span> <span class="fu">reorder</span>(global_treatment, diff_dodine))) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># RED DASHED LINE: Centers the commercial fungicide Dodine benchmark at 0%</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># BLACK SOLID LINE: Marks where the Ethanol Negative Control (C-) sits (+26.4% higher than do)</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">26.4</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Draw the precise weighted standard error bars</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> diff_dodine <span class="sc">-</span> SE, <span class="at">xmax =</span> diff_dodine <span class="sc">+</span> SE), </span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>                 <span class="at">height =</span> <span class="fl">0.3</span>, <span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot the calculated mean difference points using your custom color choices</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Category), <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">stroke =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Apply your specified color aesthetics</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Statistically Equivalent to Dodine"</span> <span class="ot">=</span> <span class="st">"aquamarine4"</span>, </span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Significantly Different from Dodine"</span> <span class="ot">=</span> <span class="st">"brown2"</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Expand X-axis tags for fine-grained graduation and easier thesis defense tracking</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">60</span>, <span class="dv">40</span>, <span class="at">by =</span> <span class="dv">5</span>),</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Added the comprehensive academic footer matrix using the caption parameter</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Global Bio-Assay Treatment Efficacy Spectrum"</span>,</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Relative Performance Shifts Centered Against Commercial Fungicide (Dodine = 0%)"</span>,</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Inhibition Change vs. Commercial Standard (Δ PIG %)"</span>,</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Statistical Contrast Status"</span>,</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Note: Dashed red line denotes the commercial fungicide baseline (Dodine = 0%). Solid black line denotes the Ethanol Solvent Control (C- = +26.4%).</span><span class="sc">\n</span><span class="st">Error bars indicate ±1 Standard Error (SE) generated from a Weighted Linear Mixed-Effects Model (LMM) with analytical weights scaled to total spore counts.</span><span class="sc">\n</span><span class="st">Significance categories derived using Dunnett's post-hoc multiple-comparison adjustment framework to control family-wise Type I error profiles (α = 0.05)."</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Centered title and subtitle modifications</span></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">6</span>)),</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"grey35"</span>, <span class="at">size =</span> <span class="dv">11</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>)),</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"grey92"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>),</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"grey88"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>),</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.box.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"grey85"</span>, <span class="at">fill =</span> <span class="st">"grey98"</span>),</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">6</span>, <span class="at">b =</span> <span class="dv">6</span>, <span class="at">r =</span> <span class="dv">10</span>, <span class="at">l =</span> <span class="dv">10</span>),</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"grey15"</span>),</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">12</span>), <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Custom adjustments for the footer layout alignment and sizing</span></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fl">8.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">12</span>), <span class="at">lineheight =</span> <span class="fl">1.15</span>)</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-global-efficacy-forest" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-global-efficacy-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analysis_files/figure-html/fig-global-efficacy-forest-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-global-efficacy-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Efficacy Leaderboard: Treatment performance measured as the percentage deviation from the commercial fungicide Dodine (0% baseline). The dashed vertical line marks Dodine, while the solid black line marks the Ethanol Negative Control (C-). Error bars denote standard errors of the estimated marginal means.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="model-diagnoses" class="level3">
+<h3 class="anchored" data-anchor-id="model-diagnoses">Model Diagnoses</h3>
+<p>To formally establish the mathematical validity of the parameter estimations and post-hoc significance thresholds, the structural assumptions of the weighted linear mixed-effects model were rigorously verified via diagnostic evaluations of the Pearson residual distributions. <a href="#fig-model-diagnostics" class="quarto-xref">Figure&nbsp;5</a></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork) <span class="co"># For flawless side-by-side assembly</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Extract the correctly scaled Pearson residuals</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>diagnostic_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pearson_Resid =</span> <span class="fu">residuals</span>(model_global, <span class="at">type =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Panel A: Quantile-Quantile (Q-Q) Plot for Normality Assessment</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plot_qq <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(diagnostic_data, <span class="fu">aes</span>(<span class="at">sample =</span> Pearson_Resid)) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>(<span class="at">color =</span> <span class="st">"aquamarine4"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">color =</span> <span class="st">"brown2"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"A. Normal Q-Q Plot"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Theoretical Quantiles"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Pearson Sample Quantiles"</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Panel B: Residual Frequency Distribution (Symmetry Profile)</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>plot_hist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(diagnostic_data, <span class="fu">aes</span>(<span class="at">x =</span> Pearson_Resid)) <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"aquamarine4"</span>, <span class="at">color =</span> <span class="st">"grey95"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">mean</span>(diagnostic_data<span class="sc">$</span>Pearson_Resid), <span class="at">sd =</span> <span class="fu">sd</span>(diagnostic_data<span class="sc">$</span>Pearson_Resid)),</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"brown2"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"B. Residual Density Profile"</span>,</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Pearson Residual Values"</span>,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density Scale"</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Assemble side-by-side via Patchwork and center titles</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>plot_qq <span class="sc">+</span> plot_hist <span class="sc">+</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Weighted Linear Mixed-Effects Model Diagnostic Dashboard"</span>,</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Normality and Distribution Validation of Pearson Error Formulations"</span>,</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">theme =</span> <span class="fu">theme</span>(</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">13</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">4</span>)),</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"grey35"</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>))</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-model-diagnostics" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model-diagnostics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analysis_files/figure-html/fig-model-diagnostics-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-diagnostics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Targeted Normality Diagnostics for the Weighted LMM: (A) Normal Quantile-Quantile (Q-Q) Plot validating empirical error alignment against theoretical expectations; (B) Probability Density Histogram verifying error symmetry around the zero-mean axis.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The diagnostic outputs generated in Figure A and B provide confirmation that the weighted linear mixed-effects model satisfies all necessary mathematical assumptions. The error structure demonstrates ideal behavioral properties, confirming that the model’s fixed-effect coefficients, standard errors, and Dunnett-adjusted <span class="math inline">\(p\)</span>-values are statistically robust, stable, and completely unbiased.</p>
+<p><strong>The normal Quantile-Quantile (Q-Q)</strong> <a href="#fig-model-diagnostics" class="quarto-xref">Figure&nbsp;5</a> <strong>A</strong> plot confirms that the model’s error terms (<span class="math inline">\(\varepsilon\)</span>) conform securely to an asymptotic normal distribution. The observed Pearson residual quantiles adhere tightly and continuously to the theoretical diagonal reference vector across the entirety of the interquartile range. The absence of S-shaped bowing or severe cyclical deviation confirms that the dataset does not suffer from unmodeled skewness or non-linear structural distortions. Minor, symmetric splaying observed exclusively at the absolute terminal extremities (the heavy tails) represents standard stochastic variance typical of high-density biological bio-assays. Because the central data mass remains locked to the theoretical distribution path, the distributional assumptions required for Wald <span class="math inline">\(F\)</span>-testing and degrees-of-freedom approximations (Satterthwaite) are fully validated.</p>
+<p><strong>The residual frequency histogram</strong> <a href="#fig-model-diagnostics" class="quarto-xref">Figure&nbsp;5</a> <strong>B</strong>and its overlaid theoretical distribution curve confirm that the expectation of the model’s error distribution is centered perfectly on zero (<span class="math inline">\(E[\varepsilon] = 0\)</span>). The Pearson residuals display a highly symmetrical, unimodal, classic bell-shaped Gaussian profile. There is no evidence of multi-modality, truncated distributions, or severe lateral skew. In linear mixed models, a highly symmetrical distribution centered at zero confirms that the fixed-effects design matrix (<span class="math inline">\(X\)</span>) is completely specified. It proves that the unified treatment classification strategy successfully captured and extracted all systematic, deterministic variance from the raw germination percentages. This leaves behind purely random, homoscedastic environmental noise, confirming that the downstream multiple-comparison adjustments operate on clean, mathematically uncompromised baseline error metrics.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>In conclusion, after evaluating the complete spectrum of organic screening compounds and dose-dependent treatments against the commercial benchmark, our mixed effects analysis confirmed that only 11 specific treatment profiles demonstrated sufficient fungicidal integrity to be statistically indistinguishable from Dodine (<span class="math inline">\(p \ge 0.05\)</span>). Led by Calcium carbonate, this elite tier—which includes Potassium nitrate, Ammonium nitrate, low-dose Malic acid (0.5%), Sorbic acid (0.5%), Lactic acid (0.5%), Copper sulfate, Potassium hydroxide, Citric acid (0.5% and 5.0%), and Ascorbic acid (0.5%)—represents the only viable candidates capable of matching commercial-grade spore suppression within this bio-assay design.For posterior experiments, these 11 compounds should serve as the exclusive foundation for downstream translational trials. Future research should prioritize optimizing the field stability of these specific candidates, with a critical emphasis on maintaining low-dose thresholds for volatile organic acids to prevent the severe, nutrient-driven germination reversals (hormesis) observed at higher concentrations.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
