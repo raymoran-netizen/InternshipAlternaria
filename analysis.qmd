@@ -1,11 +1,13 @@
-YAML
 ---
 title: "Fungicide effect evaluation of 24 substances against *Alternaria alternata pv. citri* (Spore Germination Data Anaylsis)"
 author: "Raymundo Morán"
-format: html
 theme: cosmo
 toc: true
 toc-location: left
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
 ---
 
 # Experiment Set Up
