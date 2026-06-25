@@ -1,0 +1,28 @@
+{
+    "id": "BCA9366F",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1781368951527.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "id": "7946150df73e4c6c8b0cc12739e2363f",
+        "name": "model_1",
+        "title": "model_1",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 0,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1781368951527,
+    "read_only": false,
+    "read_only_alternatives": []
+}
